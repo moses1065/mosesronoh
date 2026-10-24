@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Kiprotich Ronoh Moses, MEL specialist and evaluation consultant in Nairobi, Kenya.">
+<title>Moses Ronoh, MEL Specialist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column built like an M&E report: summary, indicator table, results chain, then the record. */
+:root{
+  --paper:#F5F7F6; --sheet:#FFFFFF; --ink:#13262A; --muted:#4F625F; --rule:#D5DEDB;
+  --pine:#1F5C4A; --pine-soft:#E2EEE9; --amber:#A86A00; --amber-soft:#FBF0DA;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F1A1C; --sheet:#152427; --ink:#E4EDEA; --muted:#9DB0AC; --rule:#2A3D40;
+  --pine:#6FC3A4; --pine-soft:#1B3631; --amber:#F0B44A; --amber-soft:#33281A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F1A1C; --sheet:#152427; --ink:#E4EDEA; --muted:#9DB0AC; --rule:#2A3D40;
+  --pine:#6FC3A4; --pine-soft:#1B3631; --amber:#F0B44A; --amber-soft:#33281A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 var(--body);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:960px;margin:0 auto;padding-block:48px 72px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:1.75rem;font-weight:700}
+h3{font-size:1.125rem;font-weight:700}
+p{margin:0}
+a{color:var(--pine)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+.label{font:500 .75rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.sec-head p{color:var(--muted);max-width:62ch}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:32px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{display:block;font-weight:500;color:var(--pine)}
+.hero .role{font-family:var(--display);font-size:1.15rem;font-weight:500;margin-top:16px}
+.hero .lede{margin-top:16px;max-width:60ch;color:var(--muted)}
+.avail{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font:500 .8rem var(--mono);background:var(--pine-soft);color:var(--pine);padding:6px 12px;border-radius:999px}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--pine)}
+.contact{display:flex;flex-direction:column;gap:10px;font:400 .9rem var(--mono);min-width:0}
+.contact div{display:flex;flex-direction:column;gap:2px}
+.copy{font:500 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase;background:none;border:1px solid var(--rule);color:var(--muted);border-radius:4px;padding:2px 8px;cursor:pointer;align-self:flex-start}
+.copy:hover{border-color:var(--pine);color:var(--pine)}
+
+/* Key numbers */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.fig{background:var(--sheet);padding:20px;display:flex;flex-direction:column;gap:4px}
+.fig b{font:700 2.2rem/1 var(--display);color:var(--pine)}
+.fig span{font-size:.9rem;color:var(--muted)}
+
+/* Indicator table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 16px;border-bottom:1px solid var(--rule);background:var(--paper)}
+td{padding:12px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num{font:500 .9rem var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.after{color:var(--pine);font-weight:500}
+td.where{color:var(--muted);font-size:.85rem}
+
+/* Results chain */
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--rule);background:var(--sheet)}
+.link{padding:18px 16px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;position:relative;min-width:0}
+.link:last-child{border-right:0;background:var(--pine-soft)}
+.link .label{color:var(--pine)}
+.link p{font-size:.9rem}
+.link:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:16px;background:var(--sheet);color:var(--amber);font:500 .9rem var(--mono);padding:0 2px;z-index:1}
+
+/* Experience */
+.roles{display:flex;flex-direction:column}
+.roleitem{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--rule)}
+.roleitem:last-child{border-bottom:1px solid var(--rule)}
+.when{font:500 .82rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.roleitem .org{color:var(--muted);margin-top:2px}
+.roleitem ul{margin:12px 0 0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px;max-width:68ch}
+.roleitem li::marker{color:var(--amber)}
+
+/* Assignments */
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.job{background:var(--sheet);border:1px solid var(--rule);padding:20px;display:flex;flex-direction:column;gap:10px}
+.job .client{font:500 .78rem var(--mono);color:var(--amber);letter-spacing:.04em;text-transform:uppercase}
+.job p{font-size:.95rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.tag{font:400 .72rem var(--mono);border:1px solid var(--rule);padding:2px 8px;border-radius:3px;color:var(--muted)}
+.job.feature{border-color:var(--pine);background:linear-gradient(var(--pine-soft),var(--sheet) 70%)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.skills div{display:flex;flex-direction:column;gap:8px}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:.95rem}
+
+/* Credentials */
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cred-list{display:flex;flex-direction:column}
+.cred{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--rule)}
+.cred .yr{font:500 .85rem var(--mono);color:var(--amber);font-variant-numeric:tabular-nums}
+.cred b{font-weight:600}
+.cred small{display:block;color:var(--muted);font-size:.85rem}
+
+footer{border-top:2px solid var(--ink);padding-top:24px;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;color:var(--muted);font-size:.9rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .figures{grid-template-columns:repeat(2,1fr)}
+  .chain{grid-template-columns:1fr}
+  .link{border-right:0;border-bottom:1px solid var(--rule)}
+  .link:not(:last-child)::after{content:"↓";right:auto;left:16px;top:auto;bottom:-11px}
+  .roleitem{grid-template-columns:1fr;gap:6px}
+  .jobs,.skills,.creds{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .fig b{transition:color .2s}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <p class="label">Monitoring, Evaluation, Accountability &amp; Learning</p>
+      <h1>Kiprotich<span>Ronoh Moses</span></h1>
+      <p class="role">MEL Specialist &amp; Evaluation Consultant · Nairobi, Kenya</p>
+      <p class="lede">I build the systems that tell programmes whether they are working: MEL frameworks, indicator sets, clean data pipelines and dashboards people actually use. Over seven years I have led evaluations, data quality work and staff training for NGOs, government and development partners across East Africa.</p>
+      <span class="avail">Open to MEL roles and evaluation consultancies</span>
+    </div>
+    <div class="contact">
+      <div><span class="label">Email</span><span id="em">moses1065@gmail.com</span><button class="copy" data-copy="moses1065@gmail.com">Copy</button></div>
+      <div><span class="label">Phone</span><span>+254 727 288 792</span><button class="copy" data-copy="+254727288792">Copy</button></div>
+      <div><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/ronoh-moses" target="_blank" rel="noopener">in/ronoh-moses</a></div>
+    </div>
+  </header>
+
+  <section aria-label="Track record in numbers">
+    <div class="figures">
+      <div class="fig"><b>7+</b><span>years in M&amp;E and applied research</span></div>
+      <div class="fig"><b>100+</b><span>baselines, mid-term reviews and evaluations</span></div>
+      <div class="fig"><b>150+</b><span>staff, partners and enumerators trained</span></div>
+      <div class="fig"><b>98%</b><span>survey response rates on large baselines</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="label">Performance indicators</p>
+      <h2>Results, measured the way I measure programmes</h2>
+      <p>Each line is a change I introduced and the measured effect on the indicator.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Indicator</th><th>Change</th><th>What I introduced</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>Field error rate</td><td class="num after">~12% → &lt;2%</td><td>Re-interview and spot-check protocols</td><td class="where">IPA</td></tr>
+          <tr><td>Client insight turnaround</td><td class="num after">3 weeks → 3 days</td><td>Analysis-ready datasets and automated dashboards</td><td class="where">Consulting</td></tr>
+          <tr><td>Analysis turnaround</td><td class="num after">−80%</td><td>Kobo/CAPI → SPSS and Excel pipelines</td><td class="where">IAS Kenya</td></tr>
+          <tr><td>Missing and invalid records</td><td class="num after">−78%</td><td>Multi-site Data Quality Assessments</td><td class="where">IAS Kenya</td></tr>
+          <tr><td>Donor queries per reporting cycle</td><td class="num after">−70%</td><td>Standardised indicators and reporting templates</td><td class="where">IAS Kenya</td></tr>
+          <tr><td>Data entry errors</td><td class="num after">−55%</td><td>Standard tools and validation protocols</td><td class="where">Siasa Place</td></tr>
+          <tr><td>Reporting time</td><td class="num after">−50%</td><td>Power BI dashboards for leadership</td><td class="where">Siasa Place</td></tr>
+          <tr><td>On-time donor reporting</td><td class="num after">+40%</td><td>Programme-wide MEAL framework</td><td class="where">Siasa Place</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="label">How I work</p>
+      <h2>Along the whole results chain</h2>
+    </div>
+    <div class="chain">
+      <div class="link"><span class="label">Design</span><p>Theories of change, logframes, results frameworks, indicator definitions and MEL plans.</p></div>
+      <div class="link"><span class="label">Collect</span><p>Survey design, sampling, KoboToolbox, ODK and CommCare tools with built-in checks.</p></div>
+      <div class="link"><span class="label">Assure</span><p>Data Quality Assessments, validation rules, cleaning and correction routines.</p></div>
+      <div class="link"><span class="label">Analyse</span><p>SPSS, STATA, SQL and Excel; mixed methods, KIIs, FGDs and Most Significant Change.</p></div>
+      <div class="link"><span class="label">Use</span><p>Power BI dashboards, donor reports and learning sessions that turn evidence into decisions.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="label">Experience</p>
+      <h2>Where I have done the work</h2>
+    </div>
+    <div class="roles">
+      <article class="roleitem">
+        <span class="when">Nov 2022 – Present</span>
+        <div>
+          <h3>Monitoring, Evaluation, Accountability &amp; Learning Officer</h3>
+          <p class="org">Siasa Place, Nairobi</p>
+          <ul>
+            <li>Implemented a MEAL framework across programmes, raising on-time donor reporting by 40%.</li>
+            <li>Led quarterly Data Quality Assessments that improved data completeness by 30%.</li>
+            <li>Built Power BI dashboards that halved reporting time and supported resource reallocation.</li>
+            <li>Trained 45+ staff and partners, lifting data literacy scores by 70%.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="roleitem">
+        <span class="when">2015 – Present</span>
+        <div>
+          <h3>Data Analyst &amp; M&amp;E Consultant</h3>
+          <p class="org">Independent practice</p>
+          <ul>
+            <li>Delivered 100+ baselines, mid-term reviews, final evaluations and analytical assignments.</li>
+            <li>Designed sampling strategies and statistical analysis plans to protect study validity.</li>
+            <li>Coached client teams in M&amp;E and data visualisation, raising evidence use by about 45%.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="roleitem">
+        <span class="when">Nov 2020 – Nov 2022</span>
+        <div>
+          <h3>Monitoring, Evaluation, Accountability &amp; Learning Officer</h3>
+          <p class="org">International Aid Services (IAS) Kenya, Nairobi</p>
+          <ul>
+            <li>Designed standardised indicators and reporting templates that cut donor queries by 70%.</li>
+            <li>Supervised large baseline and endline surveys with response above 98% and completeness above 95%.</li>
+            <li>Trained and mentored 60+ field staff and enumerators.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="roleitem">
+        <span class="when">Jan 2020 – Feb 2021</span>
+        <div>
+          <h3>Research Assistant</h3>
+          <p class="org">Laterite Kenya</p>
+          <ul>
+            <li>Programmed CAPI and Kobo tools with quality checks, cutting cleaning cycles by 60%.</li>
+            <li>Facilitated 25+ focus group discussions feeding client policy recommendations.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="roleitem">
+        <span class="when">Jan – Dec 2019</span>
+        <div>
+          <h3>Senior Field Officer</h3>
+          <p class="org">Innovations for Poverty Action (IPA)</p>
+          <ul>
+            <li>Managed fieldwork for a Universal Basic Income study with under 5% non-response.</li>
+            <li>Trained and supervised 50+ enumerators and local supervisors.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="roleitem">
+        <span class="when">Jan 2017 – Dec 2018</span>
+        <div>
+          <h3>Assistant Lecturer, Research Methods &amp; Statistics</h3>
+          <p class="org">Kenya Institute of Management</p>
+          <ul>
+            <li>Delivered 100+ contact hours and supervised 30+ student research projects.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="label">Selected assignments</p>
+      <h2>Evaluations and studies</h2>
+    </div>
+    <div class="jobs">
+      <article class="job feature">
+        <span class="client">The Salvation Army Kenya East · 2026</span>
+        <h3>Midline Evaluation, WASH, Food Security &amp; Resilience Programme 2024–2028</h3>
+        <p>Led a mixed-methods midline across several counties: household and school surveys, KIIs, FGDs and a technical audit of five water facilities, assessed against OECD/DAC criteria. Delivered the final report, comment-response matrix and all five datasets.</p>
+        <div class="tags"><span class="tag">OECD/DAC</span><span class="tag">Mixed methods</span><span class="tag">WASH</span><span class="tag">Kobo</span></div>
+      </article>
+      <article class="job">
+        <span class="client">The Salvation Army Kenya East · 2024</span>
+        <h3>Baseline Study, Kenya WASH, Food Security &amp; Resilience Programme</h3>
+        <p>Survey design and data management consultant: designed and coded the tools, trained research assistants and ran the end-to-end data flow.</p>
+        <div class="tags"><span class="tag">Baseline</span><span class="tag">Survey design</span><span class="tag">Data management</span></div>
+      </article>
+      <article class="job">
+        <span class="client">MESPT</span>
+        <h3>AgriFI Mid-Term Review</h3>
+        <p>Statistical analysis and infographics assessing programme performance for the Micro-Enterprises Support Programme Trust.</p>
+        <div class="tags"><span class="tag">Mid-term review</span><span class="tag">Agriculture</span><span class="tag">Infographics</span></div>
+      </article>
+      <article class="job">
+        <span class="client">Kenya Red Cross · Thread &amp; Ink Textiles</span>
+        <h3>Baseline Market Assessment</h3>
+        <p>Set baseline metrics and gave actionable insights on long-term enterprise sustainability.</p>
+        <div class="tags"><span class="tag">Market assessment</span><span class="tag">Livelihoods</span></div>
+      </article>
+      <article class="job">
+        <span class="client">Free Pentecostal Fellowship of Kenya</span>
+        <h3>Narok Peace Project Final Evaluation</h3>
+        <p>Designed survey tools and deployed Kobo Collect for a peacebuilding end-of-project evaluation.</p>
+        <div class="tags"><span class="tag">Endline</span><span class="tag">Peacebuilding</span><span class="tag">Kobo Collect</span></div>
+      </article>
+      <article class="job">
+        <span class="client">Innovations for Poverty Action</span>
+        <h3>Universal Basic Income Study Fieldwork</h3>
+        <p>Field management for a large cash-transfer study, with re-interview and spot-check protocols that brought errors under 2%.</p>
+        <div class="tags"><span class="tag">RCT fieldwork</span><span class="tag">Data quality</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="label">Toolkit</p>
+      <h2>Methods and software</h2>
+    </div>
+    <div class="skills">
+      <div><span class="label">MEL methods</span><ul><li>Theory of change &amp; logframes</li><li>Baselines, midlines, endlines</li><li>Outcome Mapping &amp; Harvesting</li><li>Most Significant Change</li><li>Data Quality Assessments</li><li>Sampling &amp; analysis plans</li></ul></div>
+      <div><span class="label">Data &amp; analysis</span><ul><li>SPSS · STATA · SQL</li><li>Advanced Excel</li><li>Power BI · Tableau</li><li>KoboToolbox · ODK · CommCare</li><li>CAPI programming</li><li>Qualitative coding</li></ul></div>
+      <div><span class="label">Standards &amp; languages</span><ul><li>Research ethics &amp; informed consent</li><li>Data protection</li><li>Safeguarding</li><li>English (fluent)</li><li>Kiswahili (fluent)</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="label">Education &amp; certification</p>
+      <h2>Credentials</h2>
+    </div>
+    <div class="creds">
+      <div class="cred-list">
+        <span class="label" style="padding-bottom:8px">Academic &amp; professional</span>
+        <div class="cred"><span class="yr">2026</span><div><b>Programme in Politics, Policy &amp; Governance</b><small>School of Politics, Policy and Governance (SPPG) Kenya</small></div></div>
+        <div class="cred"><span class="yr">2025</span><div><b>Senior Management Course, with Credit</b><small>Kenya School of Government</small></div></div>
+        <div class="cred"><span class="yr">2022</span><div><b>Diploma in Technical Education</b><small>Kenya Technical Trainers College</small></div></div>
+        <div class="cred"><span class="yr">2021</span><div><b>Enhancement in Computing (IT)</b><small>Mount Kenya University</small></div></div>
+        <div class="cred"><span class="yr">2020</span><div><b>Certified Monitoring &amp; Evaluation Professional</b><small>Kenya Institute of Management</small></div></div>
+        <div class="cred"><span class="yr">2013</span><div><b>BSc Applied Statistics with Computing</b><small>University of Eldoret · Second Class Honours</small></div></div>
+      </div>
+      <div class="cred-list">
+        <span class="label" style="padding-bottom:8px">Short courses</span>
+        <div class="cred"><span class="yr">2026</span><div><b>Introduction to Safeguarding</b><small>ACFID</small></div></div>
+        <div class="cred"><span class="yr">2022</span><div><b>Data Protection Course</b><small>CIPIT, Strathmore University</small></div></div>
+        <div class="cred"><span class="yr">2020</span><div><b>Surveillance, Monitoring &amp; Evaluation of Malaria Programmes</b><small>MEASURE Evaluation · USAID / CDC / PMI</small></div></div>
+        <div class="cred"><span class="yr">2019</span><div><b>Research Ethics Evaluation, Informed Consent, Intro to Research Ethics</b><small>TRREE programme (three modules)</small></div></div>
+        <div class="cred"><span class="yr">2011</span><div><b>SPSS Training</b><small>Mathematics Association of Moi University</small></div></div>
+        <div class="cred"><span class="yr">2010</span><div><b>Computer Packages &amp; C++</b><small>Computer Society of Moi University</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div><span class="label">Contact</span><br>moses1065@gmail.com · +254 727 288 792</div>
+    <div><span class="label">Referees</span><br>Three professional referees available on request</div>
+  </footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const t=b.dataset.copy, old=b.textContent;
+    const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent=old,1500)};
+    try{navigator.clipboard.writeText(t).then(done,()=>{sel(b.previousElementSibling)})}catch(e){sel(b.previousElementSibling)}
+  });
+});
+function sel(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+</script>
+
+</html>
